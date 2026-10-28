@@ -32,5 +32,9 @@
       "decided_here": false
     }
   },
-  "tool": "tools/v_sile_na.py"
+  "tool": "tools/v_sile_na.py",
+  "citation": {
+    "file": "([a-z0-9-]+)/statya-0*([0-9]+)\\.md",
+    "cites": "([Сс]тать[а-яё]*|ст\\.) ?{n}([^0-9]|$)"
+  }
 }
