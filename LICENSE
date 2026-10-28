@@ -1,0 +1,24 @@
+The legal texts and the data about them come from the Centralised Database of Legal Information of the Ministry of
+Justice of the Kyrgyz Republic:
+
+  Источник: Централизованный банк данных правовой информации Министерства юстиции Кыргызской Республики,
+  https://cbd.minjust.gov.kg
+
+Under the Kyrgyz law on copyright (Закон Кыргызской Республики от 14 января 1998 года № 6 "Об авторском праве и
+смежных правах", статья 8), "Не являются объектами авторского права: официальные документы (законы, постановления,
+решения и т.п.), а также их официальные переводы". The Constitutions and laws in this repository are texts of that
+kind.
+
+REUSE OF THE DATABASE IS UNCLEAR. cbd.minjust.gov.kg and its API publish no terms of use and no licence (checked
+2026-10-28; robots.txt has an empty Disallow and no Crawl-delay). The database's own arrangement, headers and notes may
+be protected even where the texts are not. Until the terms are clarified this repository stays PRIVATE.
+
+Changes made by Lexifina: each edition's HTML was converted to one Markdown file per article (one line per
+paragraph); words broken at the end of a printed line were joined; the database's status banner over past editions was
+left out; spacing was collapsed; and the editions were arranged as git commits credited to the laws that made each
+change. The wording of the law was not changed. The Ministry of Justice of the Kyrgyz Republic does not endorse this
+repository.
+
+Lexifina's own contributions (the arrangement of the history, the commit messages, the tables and the tools) are
+dedicated to the public domain under CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/legalcode

@@ -1,0 +1,77 @@
+{
+ "built": "2026-10-28",
+ "acts": [
+  {
+   "slug": "konstitutsiya-1993",
+   "document": "https://cbd.minjust.gov.kg/1",
+   "editions": [
+    {
+     "edition_day": "1993-05-05",
+     "in_force": "1993-05-05",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989117&lang=ru",
+     "sha256": "912c947c7882ad18db115bf320342cafa8c4228ae67278b25d93d6d65fbfc3da"
+    },
+    {
+     "edition_day": "1996-02-16",
+     "in_force": "1996-02-17",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989118&lang=ru",
+     "sha256": "2d12e0a41c9a317b6cb5d76f230c3c0ff88e3a537096a36b4bf837bfaca339b5"
+    },
+    {
+     "edition_day": "1998-10-21",
+     "in_force": "1998-10-23",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989119&lang=ru",
+     "sha256": "007cfbc00380e110b3608a093cd17150389df172e34000aac1961c23b138d427"
+    },
+    {
+     "edition_day": "2001-12-24",
+     "in_force": "2001-12-24",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989120&lang=ru",
+     "sha256": "5728a045ed7cb0a486dcc307004901fb9483b5b86463513a67775494570d6950"
+    },
+    {
+     "edition_day": "2003-02-18",
+     "in_force": "2003-02-19",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989121&lang=ru",
+     "sha256": "cf3419c6e195dea6f0d189ffff8b0065792b6e403da419995b8d1315c38d8c58"
+    },
+    {
+     "edition_day": "2006-11-09",
+     "in_force": "2006-11-09",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989122&lang=ru",
+     "sha256": "9f22490ae5ce90f3b71c75456c307a2cfcbd520583a815ef3f827256f443513e"
+    },
+    {
+     "edition_day": "2007-01-15",
+     "in_force": "2007-01-16",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989123&lang=ru",
+     "sha256": "1880ce4078c09b06a63e5b0cdf16ae9903c185c505da3a1b3bb1b0d3723970a2"
+    },
+    {
+     "edition_day": "2007-10-23",
+     "in_force": "2007-10-24",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989124&lang=ru",
+     "sha256": "c4b410f5460b4eedd6e999634514399d29e1d44baaad81b162a9a08707598650"
+    },
+    {
+     "edition_day": "2010-06-27",
+     "in_force": "2010-07-02",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=989125&lang=ru",
+     "sha256": "2b55f9997a5e89bf4dc070e08156cb09098aaa3f5ead2da0babedbc17666bb36"
+    }
+   ]
+  },
+  {
+   "slug": "konstitutsiya-2021",
+   "document": "https://cbd.minjust.gov.kg/112213",
+   "editions": [
+    {
+     "edition_day": "2021-05-05",
+     "in_force": "2021-05-05",
+     "url": "https://cbd.minjust.gov.kg/api/v1/GetEdition?editionId=1202952&lang=ru",
+     "sha256": "9050f53d1532e663a1f7a38c6bb95ee9d0c82cf98ff8e7ec9c85469c0372eb37"
+    }
+   ]
+  }
+ ]
+}
