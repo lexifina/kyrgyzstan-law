@@ -1,0 +1,11 @@
+# Закон КР от 14 июля 2015 года № 155 "О присоединении к Конвенции о физической защите ядерного материала"
+
+Закон КР от 14.07.2015 № 155 · 1 versions, from 2015-07-17 (latest in force: 2015-07-17) · <https://cbd.minjust.gov.kg/111198>
+
+| Provision | File | Changes | Last changed |
+| --- | --- | ---: | --- |
+| Преамбула | [preambula.md](preambula.md) | 0 |  |
+| Статья 1 | [statya-001.md](statya-001.md) | 0 |  |
+| Статья 2 | [statya-002.md](statya-002.md) | 0 |  |
+| Статья 3 | [statya-003.md](statya-003.md) | 0 |  |
+| Статья 4 | [statya-004.md](statya-004.md) | 0 |  |
