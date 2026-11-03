@@ -6,12 +6,12 @@ Justice of the Kyrgyz Republic:
 
 Under the Kyrgyz law on copyright (Закон Кыргызской Республики от 14 января 1998 года № 6 "Об авторском праве и
 смежных правах", статья 8), "Не являются объектами авторского права: официальные документы (законы, постановления,
-решения и т.п.), а также их официальные переводы". The Constitutions and laws in this repository are texts of that
+решения и т.п.), а также их официальные переводы". The Constitutions, codes and laws in this repository are texts of that
 kind.
 
-REUSE OF THE DATABASE IS UNCLEAR. cbd.minjust.gov.kg and its API publish no terms of use and no licence (checked
-2026-10-28; robots.txt has an empty Disallow and no Crawl-delay). The database's own arrangement, headers and notes may
-be protected even where the texts are not. Until the terms are clarified this repository stays PRIVATE.
+cbd.minjust.gov.kg publishes no terms of use and no licence (checked 2026-10-28 and 2026-11-03). The database's own
+arrangement, headers and notes may be protected even where the texts are not; its bracketed editorial notes are left
+out of the codes and laws added as current text.
 
 Changes made by Lexifina: each edition's HTML was converted to one Markdown file per article (one line per
 paragraph); words broken at the end of a printed line were joined; the database's status banner over past editions was
