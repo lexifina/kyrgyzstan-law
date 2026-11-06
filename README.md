@@ -1,5 +1,7 @@
 # Kyrgyz law, change by change
 
+Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Kyrgyzstan's national law, which global-law reads at `kyrgyzstan/national/acts/`.
+
 The law of the Kyrgyz Republic as a git repository, in two parts:
 
 - **The Constitutions, with their history**: the **Constitution of 5 May 1993** in all nine editions the Ministry of Justice publishes, from 1993 until it was replaced by the Constitution of 27 June 2010, and the **Constitution of 5 May 2021**. Each amending law is one commit, credited to that law and dated the day it took effect.
