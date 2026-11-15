@@ -26,7 +26,8 @@ The text is in Russian, an official language, as the Ministry of Justice databas
 
 - **[Ask Claude about the law of Kyrgyzstan](https://global-law.lexifina.com/v1/try_claude?country=kyrgyzstan)**: opens Claude with a first question ready.
 - **[Ask ChatGPT](https://global-law.lexifina.com/v1/try_chatgpt?country=kyrgyzstan)**: the same question in ChatGPT.
-- **[Call the API in your browser](https://global-law.lexifina.com/v1/search_law?query=%D0%B5%D0%B6%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA&jurisdictions=kyrgyzstan)**: a search of Kyrgyzstan's law for "ежегодный отпуск" (annual leave), returned as JSON. See the [documentation here](https://lexifina.com/api/global-law).
+- **[Search Kyrgyzstan's law on our site](https://lexifina.com/law?country=kyrgyzstan&q=%D0%B5%D0%B6%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA)**: a search for "ежегодный отпуск" (annual leave), with each provision's text and its versions, no account needed.
+- **[Developer REST API](https://global-law.lexifina.com/v1/search_law?query=%D0%B5%D0%B6%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA&jurisdiction=kyrgyzstan)**: the same search as JSON, with no key. See the [documentation here](https://lexifina.com/api/global-law).
 
 Both assistants read the record through the free Global law connector (MCP, `https://global-law.lexifina.com/mcp`); the first time, the chat gives you the link that adds it. Ask in Russian or in English.
 
