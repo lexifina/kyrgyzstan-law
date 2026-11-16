@@ -62,6 +62,7 @@ A change to a Constitution is credited to the law that made it, as the database 
 - A second build of the Constitutions from the same data gave the same hashes for every commit and tag. Both results are in [`REPRODUCE.md`](REPRODUCE.md).
 - `tools/check_acts.py` reads every code and law back from git and compares it with the corpus it was built from ([`REPRODUCE-acts.md`](REPRODUCE-acts.md)).
 - History is append-only: new acts and versions go on top (`tools/append.py`), and no published commit is rewritten.
+- [vulnerabilities/](vulnerabilities/README.en.md): possible drafting mistakes in Kyrgyz law, found by global-law's detectors and checked by hand.
 
 ## What it does not show
 
