@@ -86,6 +86,10 @@ python3 tools/law.py show 2026-01-01 kyrgyzstan/national/acts/act/2021/konstitut
 
 Это перевод английской версии ([README.en.md](README.en.md)); при расхождениях действует английская версия.
 
+## Визуализации
+
+- [visualisations/](visualisations/): графики по данным этого репозитория. Ещё не построены.
+
 ## Ещё
 
 Из репозитория [lexifina/global-law](https://github.com/lexifina/global-law) (на английском):
