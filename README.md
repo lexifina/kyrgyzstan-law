@@ -1,37 +1,41 @@
-# Kyrgyzstan: law history in git
+# Кыргызстан: история законодательства в git
 
-**English** · **[Кратко по-русски](#по-русски)**
+**Русский** · [English](README.en.md)
 
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="data/ru/effort-dark.svg">
+<img alt="Законодательство Кыргызстана в этом репозитории: что в нём есть, изменения по году вступления в силу, полнота по официальным источникам и точность содержимого" src="data/ru/effort-light.svg" width="880">
+</picture>
 
-The law of the Kyrgyz Republic as a git history: one file per article, one commit per version on the day it took effect, and the law that made each change as the commit's author (the publisher, where no law is named). `git blame` names the law behind every line; `git log` lists every change to an article; picking a date gives the text in force that day.
+Законодательство Кыргызской Республики в виде истории git: один файл на каждую статью, один коммит на каждую редакцию в день её вступления в силу, а автором коммита указан закон, внёсший изменение (публикатор, если закон не назван). `git blame` называет закон, стоящий за каждой строкой; `git log` перечисляет все изменения статьи; выбрав дату, можно получить текст, действовавший в тот день.
 
-Part of [lexifina/global-law](https://github.com/lexifina/global-law), one git history for every country's law: this is Kyrgyzstan's national law, which global-law reads at `kyrgyzstan/national/acts/`.
+Часть [lexifina/global-law](https://github.com/lexifina/global-law) — единой истории git для законодательства всех стран: здесь национальное законодательство Кыргызстана, которое global-law читает по пути `kyrgyzstan/national/acts/`.
 
-**What is in it now:** the Constitution of 5 May 1993 in all nine editions the Ministry of Justice publishes, changed by seven laws from 1996 to 2007, until the Constitution of 2010 replaced it on 2 July 2010; the Constitution of 5 May 2021, in force from that day; and 2,938 codes and laws the database lists as in force (22 codes, 56 constitutional laws and 2,860 laws), each as its current text only. [`zakony.csv`](zakony.csv) lists the laws that changed the Constitutions, with their dates; [`REPRODUCE-acts.md`](REPRODUCE-acts.md) lists every code and law.
+**Что здесь сейчас:** Конституция от 5 мая 1993 года во всех девяти редакциях, которые публикует Министерство юстиции, с изменениями, внесёнными семью законами с 1996 по 2007 год, — до её замены Конституцией 2010 года 2 июля 2010 года; Конституция от 5 мая 2021 года, действующая с этого дня; и 2 938 кодексов и законов, которые база данных указывает как действующие (22 кодекса, 56 конституционных законов и 2 860 законов), каждый только в текущей редакции. [`zakony.csv`](zakony.csv) перечисляет законы, изменявшие Конституции, с их датами; [`REPRODUCE-acts.md`](REPRODUCE-acts.md) перечисляет все кодексы и законы.
 
-Laws are in `<kind>/<year>/<month>-<day>-n<number>/`, by the day they were enacted (`zakon/2009/02-09-n43/` is the Закон КР of 9 February 2009 No. 43, on universal military duty; `konst-zakon/` holds constitutional laws); the codes have folders named after them (`trudovoy-kodeks-kyrgyzskoy-respubliki/` is the Трудовой кодекс, the Labour Code, Code No. 23 of 23 January 2025). The 2021 Constitution is `act/2021/konstitutsiya/`; the 1993 Constitution's files are under `konstitutsiya-1993/` until 2 July 2010. Each article is one file, `statya-NNN.md`, and `data/paths.json` maps each act id to its folder.
+Законы находятся в папках `<kind>/<year>/<month>-<day>-n<number>/` по дню их принятия (`zakon/2009/02-09-n43/` — Закон КР от 9 февраля 2009 года № 43 о всеобщей воинской обязанности; в `konst-zakon/` находятся конституционные законы); у кодексов папки названы по их наименованию (`trudovoy-kodeks-kyrgyzskoy-respubliki/` — Трудовой кодекс Кыргызской Республики от 23 января 2025 года № 23). Конституция 2021 года находится в `act/2021/konstitutsiya/`; файлы Конституции 1993 года — в `konstitutsiya-1993/` до 2 июля 2010 года. Каждая статья — это один файл, `statya-NNN.md`, а `data/paths.json` сопоставляет идентификатор каждого акта с его папкой.
 
-The text is in Russian, an official language, as the Ministry of Justice database publishes it. Kyrgyz is the state language; the database's Kyrgyz text and any English translation are not part of this record.
+Текст приводится на русском языке, являющемся официальным, в том виде, в каком его публикует база данных Министерства юстиции. Государственным языком является кыргызский; текст базы данных на кыргызском языке и какой-либо перевод на английский в эту запись не входят.
 
-## Questions as git commands
+## Вопросы в виде команд git
 
-| Question | Command |
+| Вопрос | Команда |
 | --- | --- |
-| Every change to Article 5 of the 1993 Constitution (languages) | `git log -p --word-diff -- konstitutsiya-1993/statya-005.md` |
-| Which law wrote each line of Article 44 of the 2021 Constitution? | `git blame act/2021/konstitutsiya/statya-044.md` |
-| Every version of the 1993 Constitution, with the day each took effect | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- konstitutsiya-1993 ":(exclude)konstitutsiya-1993/README.md"` |
-| Article 5 of the 1993 Constitution as in force on 1 January 2002 | `python tools/on.py 2002-01-01 konstitutsiya-1993 5` |
+| Все изменения статьи 5 Конституции 1993 года (языки) | `git log -p --word-diff -- konstitutsiya-1993/statya-005.md` |
+| Какой закон написал каждую строку статьи 44 Конституции 2021 года? | `git blame act/2021/konstitutsiya/statya-044.md` |
+| Все редакции Конституции 1993 года с днём вступления в силу каждой из них | `git log --format="%h %(trailers:key=In-force,valueonly,separator=) %an" -- konstitutsiya-1993 ":(exclude)konstitutsiya-1993/README.md"` |
+| Статья 5 Конституции 1993 года в редакции, действовавшей на 1 января 2002 года | `python tools/on.py 2002-01-01 konstitutsiya-1993 5` |
 
-**Outside git**, we also host this record publicly, for free:
+**Вне git** мы также бесплатно и открыто размещаем эту запись:
 
-- **[Ask Claude about the law of Kyrgyzstan](https://global-law.lexifina.com/v1/try_claude?country=kyrgyzstan)**: opens Claude with a first question ready.
-- **[Ask ChatGPT](https://global-law.lexifina.com/v1/try_chatgpt?country=kyrgyzstan)**: the same question in ChatGPT.
-- **[Search Kyrgyzstan's law on our site](https://lexifina.com/law?country=kyrgyzstan&q=%D0%B5%D0%B6%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA)**: a search for "ежегодный отпуск" (annual leave), with each provision's text and its versions, no account needed.
-- **[Developer REST API](https://global-law.lexifina.com/v1/search_law?query=%D0%B5%D0%B6%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA&jurisdiction=kyrgyzstan)**: the same search as JSON, with no key. See the [documentation here](https://lexifina.com/api/global-law).
+- **[Спросить Claude о законодательстве Кыргызстана](https://global-law.lexifina.com/v1/try_claude?country=kyrgyzstan)**: открывает Claude с уже подготовленным первым вопросом.
+- **[Спросить ChatGPT](https://global-law.lexifina.com/v1/try_chatgpt?country=kyrgyzstan)**: тот же вопрос в ChatGPT.
+- **[Искать в законодательстве Кыргызстана на нашем сайте](https://lexifina.com/law?country=kyrgyzstan&q=%D0%B5%D0%B6%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA)**: поиск по запросу «ежегодный отпуск» с текстом каждого положения и его редакциями, без учётной записи.
+- **[REST API для разработчиков](https://global-law.lexifina.com/v1/search_law?query=%D0%B5%D0%B6%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%BE%D1%82%D0%BF%D1%83%D1%81%D0%BA&jurisdiction=kyrgyzstan)**: тот же поиск в формате JSON, без ключа. См. [документацию здесь](https://lexifina.com/api/global-law).
 
-Both assistants read the record through the free Global law connector (MCP, `https://global-law.lexifina.com/mcp`); the first time, the chat gives you the link that adds it. Ask in Russian or in English.
+Оба ассистента читают запись через бесплатный коннектор Global law (MCP, `https://global-law.lexifina.com/mcp`); при первом обращении чат даст ссылку для его подключения. Спрашивать можно на русском или на английском.
 
-**Host it yourself easily.** All it takes is git and Python, and the tools run on your machine:
+**Легко разместить у себя.** Нужны только git и Python, а инструменты работают на вашем компьютере:
 
 ```sh
 git clone --depth 1 https://github.com/lexifina/global-law && cd global-law
@@ -39,57 +43,55 @@ python3 tools/countries.py add kyrgyzstan/national/acts
 python3 tools/law.py show 2026-01-01 kyrgyzstan/national/acts/act/2021/konstitutsiya/statya-044.md
 ```
 
-Opened in Claude Code, Cursor, VS Code or Codex, the clone also starts a local MCP server with the same tools ([MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md)).
+При открытии в Claude Code, Cursor, VS Code или Codex клон также запускает локальный MCP-сервер с теми же инструментами ([MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md)).
 
-## Dates
+## Даты
 
-Each commit is dated at noon, Asia/Bishkek, on the day the version took effect, and carries it in its `In-force:` trailer:
+Каждый коммит датирован полднем по времени Asia/Bishkek дня, в который редакция вступила в силу, и содержит этот день в трейлере `In-force:`:
 
-- for the Constitutions, the day each law took effect by its own words ("со дня официального опубликования", "со дня подписания"), quoted in the commit's `Evidence:` trailer; part 2 of Article 44 of the 2021 Constitution has its own commit on 1 January 2023;
-- for a code or law never amended (2,440 of them), the day it took effect by its own words, else the database's entry-into-force day, else its day of enactment; the commit's message says which;
-- for an amended code or law (498), 3 November 2026, the day its current text was retrieved: the commit does not say that this wording applied any earlier;
-- two laws of 2025 whose database record gives the year as 0025 and 0202 are dated 1 January 1970, as git stores no earlier date, with the database's day in `In-force:`.
+- для Конституций — день вступления в силу каждого закона согласно его собственному тексту («со дня официального опубликования», «со дня подписания»), процитированному в трейлере `Evidence:` коммита; часть 2 статьи 44 Конституции 2021 года имеет собственный коммит от 1 января 2023 года;
+- для кодекса или закона, ни разу не изменявшегося (таких 2 440), — день его вступления в силу согласно его собственному тексту, а при его отсутствии — день вступления в силу по базе данных, а при отсутствии и его — день принятия; в сообщении коммита указано, какой именно;
+- для изменённого кодекса или закона (498) — 3 ноября 2026 года, день получения его текущего текста: коммит не утверждает, что эта редакция применялась раньше;
+- два закона 2025 года, у которых в записи базы данных год указан как 0025 и 0202, датированы 1 января 1970 года, поскольку git не хранит более ранних дат, а день по базе данных указан в `In-force:`.
 
-A change to a Constitution is credited to the law that made it, as the database names it (`Закон КР от 16 февраля 1996 года № 1`); the changes no law names (three commits: the database's corrections of spelling and punctuation) are credited to the publisher, `ЦБД ПИ Минюста КР`, as `Kind: unexplained`. A code or law never amended is credited to itself, an amended one to the publisher.
+Изменение Конституции приписывается закону, который его внёс, под тем наименованием, которое даёт база данных (`Закон КР от 16 февраля 1996 года № 1`); изменения, не связанные ни с каким законом (три коммита: исправления орфографии и пунктуации в базе данных), приписываются публикатору, `ЦБД ПИ Минюста КР`, с пометкой `Kind: unexplained`. Ни разу не изменявшийся кодекс или закон приписывается самому себе, изменённый — публикатору.
 
-## How it is checked
+## Как это проверяется
 
-- `tools/check_repo.py` reads every edition of the Constitutions back from git on the day it took effect and compares it with the edition, file by file byte for byte and the whole act word for word: 913 files, no mismatches.
-- A second build of the Constitutions from the same data gave the same hashes for every commit and tag. Both results are in [`REPRODUCE.md`](REPRODUCE.md).
-- `tools/check_acts.py` reads every code and law back from git and compares it with the corpus it was built from ([`REPRODUCE-acts.md`](REPRODUCE-acts.md)).
-- History is append-only: new acts and versions go on top (`tools/append.py`), and no published commit is rewritten.
+- `tools/check_repo.py` считывает каждую редакцию Конституций из git на день её вступления в силу и сравнивает с этой редакцией: пофайлово байт в байт и весь акт пословно: 913 файлов, расхождений нет.
+- Повторная сборка Конституций из тех же данных дала те же хеши для каждого коммита и тега. Оба результата приведены в [`REPRODUCE.md`](REPRODUCE.md).
+- `tools/check_acts.py` считывает каждый кодекс и закон из git и сравнивает с корпусом, из которого он построен ([`REPRODUCE-acts.md`](REPRODUCE-acts.md)).
+- История только дополняется: новые акты и редакции добавляются сверху (`tools/append.py`), и ни один опубликованный коммит не переписывается.
 
-## What it does not show
+## Чего здесь нет
 
-- **Earlier wording of the codes and laws.** Only the Constitutions have their history; the 498 amended codes and laws begin on 3 November 2026, so `git blame` names the publisher, not the amending law.
-- **The Constitution of 2010** and its amendments: between 2 July 2010 and 5 May 2021 the record holds no Constitution.
-- **Laws no longer in force**, presidential decrees, government resolutions, case law and local acts.
-- **The database's notes**: its bracketed editorial notes ("(В редакции ...)", "(Утратила силу ...)") and status banners are not in the files.
-- **The Kyrgyz text.**
+- **Прежних редакций кодексов и законов.** История есть только у Конституций; 498 изменённых кодексов и законов начинаются с 3 ноября 2026 года, поэтому `git blame` называет публикатора, а не изменяющий закон.
+- **Конституции 2010 года** и изменений к ней: с 2 июля 2010 года по 5 мая 2021 года Конституции в записи нет.
+- **Утративших силу законов**, указов Президента, постановлений Правительства, судебной практики и местных актов.
+- **Примечаний базы данных**: её редакционные примечания в скобках («(В редакции ...)», «(Утратила силу ...)») и отметки о статусе в файлы не включены.
+- **Текста на кыргызском языке.**
 
-## Sources
+## Источники
 
-| Source | Kind | Past versions | Notes |
+| Источник | Вид | Прежние редакции | Примечания |
 | --- | --- | --- | --- |
-| [Централизованный банк данных правовой информации](https://cbd.minjust.gov.kg) (Ministry of Justice of the Kyrgyz Republic) | Official legal database | yes, an edition per amending law; all were read for the Constitutions, only the current one for the codes and laws | The Russian text of each edition, its day and the law that made it |
+| [Централизованный банк данных правовой информации](https://cbd.minjust.gov.kg) (Министерство юстиции Кыргызской Республики) | Официальная база правовых данных | есть, по редакции на каждый изменяющий закон; для Конституций прочитаны все, для кодексов и законов — только текущая | Текст каждой редакции на русском языке, её день и закон, которым она внесена |
 
-## Licence
+## Лицензия
 
-See [`LICENSE`](LICENSE). Under the Kyrgyz law on copyright, official documents (laws, decisions and the like) are not objects of copyright (Закон КР "Об авторском праве и смежных правах", статья 8); the database publishes no terms of reuse. Lexifina's arrangement, commit messages, tables and tools are CC0 1.0.
+См. [`LICENSE`](LICENSE). Согласно закону Кыргызской Республики об авторском праве, официальные документы (законы, решения и т. п.) не являются объектами авторского права (Закон КР "Об авторском праве и смежных правах", статья 8); база данных не публикует условий повторного использования. Подборка, сообщения коммитов, таблицы и инструменты Lexifina распространяются на условиях CC0 1.0.
 
-No AI model wrote or changed legal text, and none runs when the history is built or checked; the scripts were written by Claude Code running Claude Opus 5.5 (see [`REPRODUCE.md`](REPRODUCE.md) and [`REPRODUCE-acts.md`](REPRODUCE-acts.md)).
+Ни одна модель ИИ не писала и не изменяла юридический текст, и ни одна не запускается при сборке или проверке истории; скрипты написаны Claude Code на модели Claude Opus 5.5 (см. [`REPRODUCE.md`](REPRODUCE.md) и [`REPRODUCE-acts.md`](REPRODUCE-acts.md)).
 
-## More
+Это перевод английской версии ([README.en.md](README.en.md)); при расхождениях действует английская версия.
 
-From [lexifina/global-law](https://github.com/lexifina/global-law):
+## Ещё
 
-- [FEATURES.md](https://github.com/lexifina/global-law/blob/main/FEATURES.md): every feature, and what every corpus must support (`git blame`, `law.py`, the MCP tools)
-- [FAQ.md](https://github.com/lexifina/global-law/blob/main/FAQ.md): questions and answers · [CONTRIBUTING.md](https://github.com/lexifina/global-law/blob/main/CONTRIBUTING.md): proposing changes · [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md): the MCP server · [REPRODUCE.md](https://github.com/lexifina/global-law/blob/main/REPRODUCE.md): how it was built · [CHANGELOG.md](https://github.com/lexifina/global-law/blob/main/CHANGELOG.md)
-- [FRESHNESS.md](https://github.com/lexifina/global-law/blob/main/FRESHNESS.md): how current each corpus is · [Monitoring](https://github.com/lexifina/global-law/tree/main/monitoring): whether updates are running · [WATCHING.md](https://github.com/lexifina/global-law/blob/main/WATCHING.md): how each official source is watched for changes
-- [performance/](https://github.com/lexifina/global-law/tree/main/performance): how fast the tools are, measured
-- [visualisations/](https://github.com/lexifina/global-law/tree/main/visualisations): charts and bridges across the world's law
-- [Vulnerabilities](https://github.com/lexifina/global-law/tree/main/vulnerabilities): mistakes in legislation as published
+Из репозитория [lexifina/global-law](https://github.com/lexifina/global-law) (на английском):
 
-## По-русски
-
-Право Кыргызской Республики в виде истории git: Конституция 1993 года во всех девяти редакциях, до её замены 2 июля 2010 года, и Конституция 2021 года, по одному коммиту на каждый закон, внёсший изменение, в день его вступления в силу, с этим законом в качестве автора; а также 2 938 действующих кодексов и законов, только в текущей редакции (изменённые акты — с 3 ноября 2026 года, дня получения текста). Один файл на статью; текст на русском языке, в том виде, в каком его публикует Централизованный банк данных правовой информации Министерства юстиции. Команды и подробности приведены выше, на английском.
+- [FEATURES.md](https://github.com/lexifina/global-law/blob/main/FEATURES.md): все функции и что должен поддерживать каждый корпус (`git blame`, `law.py`, инструменты MCP)
+- [FAQ.md](https://github.com/lexifina/global-law/blob/main/FAQ.md): вопросы и ответы · [CONTRIBUTING.md](https://github.com/lexifina/global-law/blob/main/CONTRIBUTING.md): как предложить изменения · [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md): MCP-сервер · [REPRODUCE.md](https://github.com/lexifina/global-law/blob/main/REPRODUCE.md): как он собран · [CHANGELOG.md](https://github.com/lexifina/global-law/blob/main/CHANGELOG.md)
+- [FRESHNESS.md](https://github.com/lexifina/global-law/blob/main/FRESHNESS.md): насколько актуален каждый корпус · [Мониторинг](https://github.com/lexifina/global-law/tree/main/monitoring): работают ли обновления · [WATCHING.md](https://github.com/lexifina/global-law/blob/main/WATCHING.md): как каждый официальный источник отслеживается на изменения
+- [performance/](https://github.com/lexifina/global-law/tree/main/performance): насколько быстры инструменты, по замерам
+- [visualisations/](https://github.com/lexifina/global-law/tree/main/visualisations): графики и связи в праве всего мира
+- [Уязвимости](https://github.com/lexifina/global-law/tree/main/vulnerabilities): ошибки в актах в опубликованном виде
